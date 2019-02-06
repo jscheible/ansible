@@ -31,7 +31,7 @@ Here is a most basic example::
 The user input is hidden by default but it can be made visible by setting ``private: no``.
 
 .. note::
-    Prompts for individual ``vars_prompt`` variables will be skipped for any variable that is already defined through the command line ``--extra-vars`` option, or when running from a non-interactive session (such as cron or Ansible Tower). See :ref:`passing_variables_on_the_command_line` in the /Variables/ chapter.
+    Prompts for individual ``vars_prompt`` variables will be skipped for any variable that is already defined through the command line ``--extra-vars`` option, or when running from a non-interactive session (such as cron or Ansible Tower), if they set those variables.  If, however, Ansible Tower does not set those variables, the template run will hang at the ``vars_prompt`` block.  See :ref:`passing_variables_on_the_command_line` in the /Variables/ chapter.
 
 If you have a variable that changes infrequently, it might make sense to
 provide a default value that can be overridden. This can be accomplished using
